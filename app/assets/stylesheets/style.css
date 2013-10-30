@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background-image: url("http://www.hhwagyu.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wagyu_flat_iron_steaks_1_2.png");
+}
+
+#container {
+  text-align: center;
+}
+
+#content {
+  font-family: verdana;
+  margin: 0 auto;
+  width: 50%;
+  border: 1px solid;
+  background-color: white;
+}
+
+h1 {
+  font-family: verdana;
+}
