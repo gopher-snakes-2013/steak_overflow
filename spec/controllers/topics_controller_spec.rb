@@ -10,8 +10,6 @@ describe TopicsController do
     response.status.should eq(200)
   end
 
-
-
   context "#create" do
     it "creates a topic with valid params" do
       expect {
