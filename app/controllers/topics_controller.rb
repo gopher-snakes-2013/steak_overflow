@@ -14,4 +14,9 @@ class TopicsController < ApplicationController
     @topic.save
     render :index
   end
+
+  def show
+    @topic = Topic.find(params[:id])
+  end
+
 end

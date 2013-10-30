@@ -8,9 +8,13 @@ body {
 }
 
 #content {
-  text-align: center;
+  font-family: verdana;
   margin: 0 auto;
   width: 50%;
   border: 1px solid;
   background-color: white;
+}
+
+h1 {
+  font-family: verdana;
 }
