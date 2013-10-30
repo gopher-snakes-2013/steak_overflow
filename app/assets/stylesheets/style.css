@@ -18,10 +18,3 @@ body {
 h1 {
   font-family: verdana;
 }
-
-#new_cut {
-  font-family: verdana;
-  border: 3px solid;
-  width: 12%;
-  margin: auto;
-}
