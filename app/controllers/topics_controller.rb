@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    @topic = Topic.new
     render :new
   end
 
