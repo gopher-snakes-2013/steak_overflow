@@ -4,13 +4,12 @@
 
 <div id="content">
   <p>CUTS:</p>
-  <ul id="topics">
     <% @topics.each do |topic| %>
-      <li><%= link_to topic.title, topic_path(topic.id) %></li>
+      <span><%= link_to topic.title, topic_path(topic.id) %></span><br>
     <% end %>
-  </ul>
+    <br>
 </div>
-
+<br>
 <div id="new_cut">
-  <%= link_to "Add a New Cut!", new_topic_path %>
+  <%= link_to "Add a New Cut!", new_topic_path, class: "button" %>
 </div>
