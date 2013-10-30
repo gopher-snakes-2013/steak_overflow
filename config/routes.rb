@@ -1,4 +1,5 @@
 SteakOverflow::Application.routes.draw do
+  root to: 'topics#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
