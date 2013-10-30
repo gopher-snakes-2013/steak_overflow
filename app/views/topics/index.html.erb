@@ -3,10 +3,10 @@
 </div>
 
 <div id="content">
-  CUTS:
+  <p>CUTS:</p>
   <ul id="topics">
     <% @topics.each do |topic| %>
-      <li><%= topic.title %></li>
+      <li><%= link_to topic.title, topic_path(topic.id) %></li>
     <% end %>
   </ul>
 </div>
