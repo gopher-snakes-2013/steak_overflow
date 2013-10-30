@@ -4,6 +4,10 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
+  def new
+    render :new
+  end
+
   def create
     @topic = Topic.new
     @topic.title = params[:topic][:title]

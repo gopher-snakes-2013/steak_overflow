@@ -1,5 +1,5 @@
 SteakOverflow::Application.routes.draw do
 
-  resources :topics, only: [:create]
+  resources :topics, only: [:index, :new, :create]
 
 end
