@@ -1,0 +1,12 @@
+
+development:
+  adapter: postgresql
+  database: steak_overflow_dev
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: steak_overflow_test
+  pool: 5
+  timeout: 5000
