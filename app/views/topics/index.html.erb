@@ -3,5 +3,9 @@
 </div>
 
 <div id="content">
-
+  <ul id="topics">Topics:
+    <% @topics.each do |topic| %>
+      <li><%= topic.title %></li>
+    <% end %>
+  </ul>
 </div>
