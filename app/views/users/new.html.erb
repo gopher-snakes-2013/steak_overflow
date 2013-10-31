@@ -1,1 +1,11 @@
-hey bison
+<div id="content">
+
+<%= form_for @user do |f| %>
+  <%= f.label "Username" %>
+  <%= f.text_field :username %><br/>
+  <%= f.label "Password" %>
+  <%= f.text_field :password %><br/>
+  <%= f.submit "Sign Up!" %>
+<% end %>
+
+</div>
