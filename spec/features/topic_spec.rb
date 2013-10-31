@@ -37,10 +37,21 @@ end
 feature 'Comments' do
 
   let!(:topic) { Topic.create(title: "TEST", content: "Bacon and eggs plz")}
+  let!(:topic2) { Topic.create(title: "Sumpin Else", content: "Thomas is awesome")}
+  let!(:other_comment) {
+    Comment.create(text: "This is stupid", topic_id: topic2.id)
+    Comment.where(topic_id: topic2.id).first.text }
 
   it "can visit the topic's page" do
     visit topic_path(topic.id)
     expect(current_path).to eq("/topics/#{topic.id}")
+  end
+
+  it "can create a comment on a topic" do
+    visit topic_path(topic.id)
+    fill_in("comment[text]", :with => "that's a great idea")
+    click_button("Comment")
+    expect(page).to_not have_content(other_comment)
   end
 
 end
