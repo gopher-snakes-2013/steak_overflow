@@ -9,9 +9,8 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new
-    @topic.title = params[:topic][:title]
-    @topic.content = params[:topic][:content]
+    @topic = Topic.new(params[:topic])
+    @topic.user_id = session[:user_id]
     @topic.save
     redirect_to root_path
   end
