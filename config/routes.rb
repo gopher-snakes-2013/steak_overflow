@@ -6,4 +6,6 @@ SteakOverflow::Application.routes.draw do
   resources :comments, only: [:show, :new, :create]
 
   resources :users, only: [:new, :create]
+
+  resources :sessions, only: [:new, :create, :destroy]
 end
