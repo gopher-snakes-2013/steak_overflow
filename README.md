@@ -9,9 +9,12 @@
 ## Release 2
 
 1. Guest can sign up
+
 - [ ] User can log in
 - [ ] User can log out
+
 2. User can modify their topics
+
 - [ ] edit
 - [ ] delete
 
