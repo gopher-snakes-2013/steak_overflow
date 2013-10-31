@@ -5,11 +5,11 @@
 <div id="content">
   <p>CUTS:</p>
     <% @topics.each do |topic| %>
-      <span><%= link_to topic.title, topic_path(topic.id) %></span><br/>
+      <span><%= link_to topic.title, topic_path(topic.id) %></span><br>
     <% end %>
-  <br/>
+    <br>
 </div>
-
+<br>
 <div id="new_cut">
-  <%= link_to "Add a New Cut!", new_topic_path %>
+  <%= link_to "Add a New Cut!", new_topic_path, class: "button" %>
 </div>
