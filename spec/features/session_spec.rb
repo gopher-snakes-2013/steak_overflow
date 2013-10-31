@@ -2,7 +2,8 @@ require 'spec_helper'
 
 feature 'User can sign in' do
 
-  let(:user){User.create(username: 'carter', password: 'password')}
+  let(:user_attrs) { { username: 'carter', password: 'password' } }
+  let!(:user){User.create(user_attrs)}
 
   scenario 'when clicks sign in' do
     visit new_session_path
@@ -11,8 +12,8 @@ feature 'User can sign in' do
 
   it "user fills in vaild username and password" do
     visit new_session_path
-    fill_in('session[username]', :with => user.username)
-    fill_in('session[password]', :with => user.password)
+    fill_in('session[username]', :with => user_attrs[:username])
+    fill_in('session[password]', :with => user_attrs[:password])
     click_button('Sign In')
     expect(current_path).to eq (root_path)
   end
