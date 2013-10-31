@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
     @topic.title = params[:topic][:title]
     @topic.content = params[:topic][:content]
     @topic.save
-    redirect_to(root_path)
+    redirect_to root_path
   end
 
   def show
