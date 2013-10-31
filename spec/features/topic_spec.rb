@@ -36,11 +36,16 @@ end
 
 feature 'Comments' do
 
-  let!(:topic) { Topic.new(title: "TEST", content: "Bacon and eggs plz")}
+  let!(:topic) { Topic.create(title: "TEST", content: "Bacon and eggs plz")}
 
   it "can visit the topic's page" do
-    visit topic_path(@topic.id)
-    expect(current_path).to eq("topics/#{@topic.id}")
+    visit topic_path(topic.id)
+    expect(current_path).to eq("/topics/#{topic.id}")
+  end
+
+  xit "can create a comment on a topic" do
+    visit topic_path(topic.id)
+    # fill_in("comment[text")
   end
 
 end
