@@ -47,6 +47,7 @@ feature 'Comments' do
     expect(current_path).to eq("/topics/#{topic.id}")
   end
 
+
   it "can create a comment on a topic" do
     visit topic_path(topic.id)
     fill_in("comment[text]", :with => "that's a great idea")
