@@ -33,3 +33,14 @@ feature "New topic page" do
   end
 
 end
+
+feature 'Comments' do
+
+  let!(:topic) { Topic.create(title: "TEST", content: "Bacon and eggs plz")}
+
+  it "can visit the topic's page" do
+    visit topic_path(topic.id)
+    expect(current_path).to eq("/topics/#{topic.id}")
+  end
+
+end
