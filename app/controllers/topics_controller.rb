@@ -3,6 +3,16 @@ class TopicsController < ApplicationController
     @topics = Topic.all
   end
 
+  def edit
+    @topic = Topic.find(params[:id])
+  end
+
+  def update
+    @topic = Topic.find(params[:id])
+    @topic.update_attributes(params[:topic])
+    redirect_to user_path(@topic.user_id)
+  end
+
   def new
     @topic = Topic.new
     render :new
@@ -16,9 +26,9 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic    = Topic.find(params[:id])
     @comments = Comment.where(topic_id: @topic.id)
-    @comment = Comment.new
+    @comment  = Comment.new
   end
 
 end

@@ -5,6 +5,7 @@ gem 'pg'
 gem 'jquery-rails'
 
 group :development, :test do
+	gem 'annotate'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
 end

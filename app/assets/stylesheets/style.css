@@ -24,3 +24,7 @@ h1 {
   background-color: darkred;
   border: 1px solid;
 }
+
+li {
+  list-style: none;
+}
