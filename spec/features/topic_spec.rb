@@ -44,4 +44,3 @@ feature 'Comments' do
   end
 
 end
-
