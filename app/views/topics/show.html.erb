@@ -3,7 +3,15 @@
 </div>
 
 <div id="content">
-  <%= @topic.content %>
+  <h2> Cut: </h2>
+  <span id="#{@topic.content}"> <%= @topic.content %> </span>
+  <h3> Comments: </h3>
+  <% @comments.each do |comment| %>
+    <span id="#{comment.id}"> <%= comment.text %> </span><br>
+  <% end %>
   <br>
+  <div id="comment_form">
+    <%= render "comment_form" %>
+  </div>
   <%= link_to "Home", root_path %>
 </div>

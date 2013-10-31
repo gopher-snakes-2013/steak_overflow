@@ -18,6 +18,8 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @comments = Comment.where(topic_id: @topic.id)
+    @comment = Comment.new
   end
 
 end
