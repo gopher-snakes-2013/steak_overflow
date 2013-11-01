@@ -8,12 +8,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_username(params[:session][:username])
-
     if sign_in(user)
+      sign_in(user)
       redirect_to root_path
     else
       redirect_to new_session_path
-    end 
+    end
   end
 
   def destroy
