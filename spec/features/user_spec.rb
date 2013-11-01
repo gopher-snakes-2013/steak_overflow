@@ -32,5 +32,10 @@ feature "Guest can sign up" do
     end
 
   end
+
+  context "Guest enters in invalid information" do
+
+  end
+
 end
 

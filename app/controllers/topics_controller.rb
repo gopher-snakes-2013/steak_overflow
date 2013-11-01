@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
   include SessionsHelper
 
   def index
-    (@current_user = User.find(session[:user_id])) if logged_in?
+    (@current_user = set_current_user) if logged_in?
     @topics = Topic.all
   end
 
@@ -18,7 +18,7 @@ class TopicsController < ApplicationController
   end
 
   def new
-    (@current_user = User.find(session[:user_id])) if logged_in?
+    (@current_user = set_current_user) if logged_in?
     @topic = Topic.new
     render :new
   end
@@ -31,10 +31,10 @@ class TopicsController < ApplicationController
   end
 
   def show
-    (@current_user = User.find(session[:user_id])) if logged_in?
+    (@current_user = set_current_user) if logged_in?
     @topic    = Topic.find(params[:id])
-    @comments = Comment.where(topic_id: @topic.id)
-    @comment  = Comment.new
+    @comments = @topic.comments
+    @comment  = @topic.comments.new
   end
 
 end
