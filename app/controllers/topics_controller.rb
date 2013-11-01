@@ -1,8 +1,9 @@
 class TopicsController < ApplicationController
+
   include SessionsHelper
 
   def index
-    (@current_user = User.find(session[:user_id])) if logged_in? 
+    (@current_user = User.find(session[:user_id])) if logged_in?
     @topics = Topic.all
   end
 
