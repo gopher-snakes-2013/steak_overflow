@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-    	@user = User.find(params[:id])
+    	@user = User.find(session[:user_id])
     	@topics = @user.topics
     else
       redirect_to root_path

@@ -22,7 +22,7 @@ describe TopicsController do
       }.to_not change { Topic.count }
     end
     it "creates a topic with a user" do
-      user = User.create(username: "joe", password: "secure")
+      user = User.create(username: "joseph", password: "securea")
       session[:user_id] = user.id
       post :create, topic: {title: "Ryan", content: "The best"}
       expect(Topic.first.user_id).to eq(1)
@@ -31,11 +31,11 @@ describe TopicsController do
 
   context "#edit" do
     before :each do
-      @user = User.create(username: "r", password: "pw")
+      @user = User.create(username: "raaaaaaa", password: "passwerd")
       @topic = Topic.create(title: "hello", content: "this is content", user_id: @user.id)
     end
     it "go to edit page" do
-      get :edit, id: @topic.id 
+      get :edit, id: @topic.id
       response.status.should eq(200)
     end
     it "edit topic" do
@@ -43,4 +43,4 @@ describe TopicsController do
       expect(Topic.find(@topic.id).title).to eq("NOT HELLO")
     end
   end
-end 
+end
