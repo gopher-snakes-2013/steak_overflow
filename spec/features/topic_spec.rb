@@ -47,7 +47,6 @@ feature 'Comments' do
     expect(current_path).to eq("/topics/#{topic.id}")
   end
 
-
   it "can create a comment on a topic" do
     visit topic_path(topic.id)
     fill_in("comment[text]", :with => "that's a great idea")
@@ -55,5 +54,13 @@ feature 'Comments' do
     expect(page).to_not have_content(other_comment)
   end
 
+
 end
 
+feature "User topics page" do
+
+  it "user can delete topic" do
+
+  end
+
+end
