@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'User can sign in' do
+feature 'User can sign in and sign out' do
 
   let(:user_attrs) { { username: 'carter', password: 'password' } }
   let!(:user){User.create(user_attrs)}
@@ -18,7 +18,7 @@ feature 'User can sign in' do
     expect(current_path).to eq (root_path)
   end
 
-   it "user fills in invaild username and password" do
+  it "user fills in invaild username and password" do
     visit new_session_path
     fill_in('session[username]', :with => 'wrong')
     fill_in('session[password]', :with => 'wrong')
@@ -26,5 +26,7 @@ feature 'User can sign in' do
     expect(current_path).to eq (new_session_path)
   end
 
-  
+  it "user can sign out" do
+
+  end
 end

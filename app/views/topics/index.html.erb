@@ -1,5 +1,13 @@
 <div id="header">
   <h1>STEAK OVERFLOW</h1>
+
+  <% if logged_in? %>
+    <h2><%= "Welcome #{@current_user.username.capitalize}"%></h2>
+
+    <div id="log_out">
+    <%= link_to "Log Out", session_path(@current_user.id), method: 'delete', class: "button" %>
+    </div>
+  <% end %>
 </div>
 
 <div id="content">

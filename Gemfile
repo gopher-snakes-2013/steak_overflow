@@ -8,6 +8,7 @@ gem 'bcrypt-ruby'
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'better_errors'
 end
 
 group :test do
