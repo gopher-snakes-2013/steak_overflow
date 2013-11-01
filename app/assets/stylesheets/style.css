@@ -1,10 +1,18 @@
+html{
+  background-image:url("cow.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
   margin: 0;
-  background-image: url("http://www.hhwagyu.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/w/a/wagyu_flat_iron_steaks_1_2.png");
 }
 
 #container {
   text-align: center;
+  padding-top: 10%;
 }
 
 #content {
@@ -17,10 +25,15 @@ body {
 
 h1 {
   font-family: verdana;
+  color: red;
 }
 
 .button {
   font-size: 20px;
   background-color: darkred;
   border: 1px solid;
+}
+
+li {
+  list-style: none;
 }

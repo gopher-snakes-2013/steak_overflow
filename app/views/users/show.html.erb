@@ -1,0 +1,13 @@
+<h1> Hello <%= @user.username %></h1>
+
+<h2>List of Topics</h2>
+
+<ul>
+<% @topics.each do |topic| %>
+	<li><%= link_to topic.title, topic_path(topic) %>
+			<%= link_to "Edit", edit_topic_path(topic)  %>
+	</li>
+<% end %>
+</ul>
+
+<%= link_to "Home", root_path %>

@@ -14,7 +14,7 @@ describe UsersController do
     end
     it "doesn't create an invalid user" do
       expect {
-        post :create, user: { username:"" }
+        post :create, user: { username:"", password:"" }
       }.to_not change { User.count }
     end
   end
