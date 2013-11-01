@@ -38,9 +38,21 @@ describe TopicsController do
       get :edit, id: @topic.id
       response.status.should eq(200)
     end
-    it "edit topic" do
+    it "updates topic" do
       post :update, id: @topic.id, topic: {title: "NOT HELLO", content: "THIS IS CONTENT"}
       expect(Topic.find(@topic.id).title).to eq("NOT HELLO")
+    end
+  end
+
+  context "#destroy" do
+    before :each do
+      @user = User.create(username: "raaaaaaa", password: "passwerd")
+      @topic = Topic.create(title: "hello", content: "this is content", user_id: @user.id)
+    end
+    it "deletes the topic" do
+      expect {
+      delete :destroy, id: @topic.id
+      }.to change { Topic.count }.by(-1)
     end
   end
 end
