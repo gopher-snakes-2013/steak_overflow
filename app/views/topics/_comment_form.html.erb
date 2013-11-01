@@ -1,8 +1,7 @@
-<%= form_for [@comment] do |f|  %>
+<%= form_for [@topic, @comment] do |f|  %>
 Leave a Comment:
 <br>
 <%= f.text_area :text %>
 <br>
-<%= f.hidden_field :topic_id, value: @topic.id %>
 <%= f.submit "Comment" %>
 <% end %>

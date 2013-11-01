@@ -3,12 +3,13 @@ class TopicsController < ApplicationController
   include SessionsHelper
 
   def index
-    (@current_user = User.find(session[:user_id])) if logged_in?
-    @topics = Topic.all
+    @current_user = set_current_user if logged_in?
+    @topics       = Topic.all
   end
 
   def edit
-    @topic = Topic.find(params[:id])
+    @current_user = set_current_user if logged_in?
+    @topic        = Topic.find(params[:id])
   end
 
   def update
@@ -18,25 +19,27 @@ class TopicsController < ApplicationController
   end
 
   def new
-    @topic = Topic.new
+    @current_user = set_current_user if logged_in?
+    @topic        = Topic.new
     render :new
   end
 
   def create
-    @topic = Topic.new(params[:topic])
+    @topic         = Topic.new(params[:topic])
     @topic.user_id = session[:user_id]
     @topic.save
     redirect_to root_path
   end
 
   def show
-    @topic    = Topic.find(params[:id])
-    @comments = Comment.where(topic_id: @topic.id)
-    @comment  = Comment.new
+    @current_user = set_current_user if logged_in?
+    @topic        = Topic.find(params[:id])
+    @comments     = @topic.comments
+    @comment      = @topic.comments.new
   end
 
   def destroy
-    @topic    = Topic.find(params[:id])
+    @topic = Topic.find(params[:id])
     @topic.destroy
     redirect_to user_path
   end

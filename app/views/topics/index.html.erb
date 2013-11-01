@@ -1,33 +1,13 @@
-<div id="header">
-  <h1>STEAK OVERFLOW</h1>
-
-  <% if logged_in? %>
-    <h2>Welcome <%= link_to @current_user.username, user_path(@current_user)%></h2>
-
-    <div id="log_out">
-    <%= link_to "Log Out", session_path(@current_user.id), method: 'delete', class: "button" %>
-    </div>
-  <% end %>
-</div>
-
-<div id="content">
-  <p>CUTS:</p>
-    <% @topics.each do |topic| %>
-      <span><%= link_to topic.title, topic_path(topic.id) %></span><br>
-    <% end %>
-    <br>
-</div>
-<br>
 <div id="new_cut">
   <%= link_to "Add a New Cut!", new_topic_path, class: "button" %>
 </div>
-
-<% if !logged_in? %>
-<div id="sign_up">
-  <%= link_to "Sign Up", new_user_path, class: "button" %>
+<br/>
+<div id="content">
+  <p>CUTS:</p>
+  <% @topics.each do |topic| %>
+  <span><%= link_to topic.title, topic_path(topic.id) %></span><br>
+  <% end %>
+  <br/>
 </div>
+<br/>
 
-<div id="sign_in">
-  <%= link_to "Sign In", new_session_path, class: "button" %>
-</div>
-<% end %>

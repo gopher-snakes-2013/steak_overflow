@@ -9,8 +9,8 @@ class UsersController < ApplicationController
 
   def show
     if logged_in?
-    	@user = User.find(session[:user_id])
-    	@topics = @user.topics
+      @current_user = set_current_user
+    	@topics = @current_user.topics
     else
       redirect_to root_path
     end
