@@ -1,17 +1,10 @@
 require 'spec_helper'
 
 describe TopicsController do
-  context "#index" do
-    it "goes to homepage" do
+  it "#index" do
       get :index
       response.status.should eq(200)
-    end
-
-    it "goest to users topics" do
-      
-    end
   end
-
   it "#new" do
     get :new
     response.status.should eq(200)
@@ -36,5 +29,18 @@ describe TopicsController do
     end
   end
 
-
+  context "#edit" do
+    before :each do
+      @user = User.create(username: "r", password: "pw")
+      @topic = Topic.create(title: "hello", content: "this is content", user_id: @user.id)
+    end
+    it "go to edit page" do
+      get :edit, id: @topic.id 
+      response.status.should eq(200)
+    end
+    it "edit topic" do
+      post :update, id: @topic.id, topic: {title: "NOT HELLO", content: "THIS IS CONTENT"}
+      expect(Topic.find(@topic.id).title).to eq("NOT HELLO")
+    end
+  end
 end 
