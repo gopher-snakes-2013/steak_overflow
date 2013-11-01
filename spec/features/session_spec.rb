@@ -10,7 +10,7 @@ feature 'User can sign in and sign out' do
     expect(current_path).to eq(new_session_path)
   end
 
-  it "user fills in vaild username and password" do
+  it "user fills in valid username and password" do
     visit new_session_path
     fill_in('session[username]', :with => user_attrs[:username])
     fill_in('session[password]', :with => user_attrs[:password])
@@ -18,7 +18,7 @@ feature 'User can sign in and sign out' do
     expect(current_path).to eq (root_path)
   end
 
-  it "user fills in invaild username and password" do
+  it "user fills in invalid username and password" do
     visit new_session_path
     fill_in('session[username]', :with => 'wrong')
     fill_in('session[password]', :with => 'wrong')
