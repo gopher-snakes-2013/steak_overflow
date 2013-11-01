@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.13)
       i18n (= 0.6.1)
       multi_json (~> 1.0)
+    annotate (2.5.0)
+      rake
     arel (3.0.2)
     bcrypt-ruby (3.0.0)
     better_errors (1.0.1)
@@ -133,6 +135,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   bcrypt-ruby
   better_errors
   capybara

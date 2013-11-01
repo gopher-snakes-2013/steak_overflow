@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'bcrypt-ruby'
 
 group :development, :test do
+	gem 'annotate'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'better_errors'
