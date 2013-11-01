@@ -7,6 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <nav class="navbar">
+    <ul class="nav_list">
+      <li><h1><%= link_to "STEAK OVERFLOW", root_path %></h1></li>
+      <% if logged_in? %>
+      <li><h2>Welcome <%= link_to @current_user.username, user_path(@current_user)%></h2></li>
+      <li><%= link_to "Log Out", session_path(@current_user.id), method: 'delete', class: "button" %></li>
+      <% end %>
+      <br/>
+      <% if !logged_in? %>
+      <li><%= link_to "Sign Up", new_user_path, class: "button" %></li>
+      <li><%= link_to "Sign In", new_session_path, class: "button" %></li>
+      <% end %>
+    </ul>
+  </nav>
+
   <div id="container">
     <%= yield %>
   </div>

@@ -18,6 +18,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+    (@current_user = User.find(session[:user_id])) if logged_in?
     @topic = Topic.new
     render :new
   end
@@ -30,6 +31,7 @@ class TopicsController < ApplicationController
   end
 
   def show
+    (@current_user = User.find(session[:user_id])) if logged_in?
     @topic    = Topic.find(params[:id])
     @comments = Comment.where(topic_id: @topic.id)
     @comment  = Comment.new
