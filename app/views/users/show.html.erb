@@ -1,7 +1,7 @@
 <div id="content">
   <ul>
   <% @topics.each do |topic| %>
-  	<li><%= link_to topic.title, topic_path(topic) %>
+  	<li><%= link_to topic.title, topic_comments_path(topic) %>
         <%= link_to "Edit", edit_topic_path(topic) %>
   			<%= link_to "Delete", topic_path(topic), method: "delete", action: :destroy %>
   	</li>

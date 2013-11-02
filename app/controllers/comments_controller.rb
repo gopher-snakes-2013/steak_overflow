@@ -20,6 +20,6 @@ class CommentsController < ApplicationController
     @comment = @topic.comments.new
     @comment.text = params[:comment][:text]
     @comment.save
-    redirect_to topic_path(@topic.id)
+    redirect_to topic_comments_path(@topic.id)
   end
 end

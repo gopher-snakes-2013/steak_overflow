@@ -1,5 +1,5 @@
 html{
-  /*background-image:url("cow.png");*/
+  background-image:url("steak_background.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,6 +7,7 @@ html{
 }
 
 .topic {
+  background-color:rgba(232, 218, 204, .751);
   border: 1px solid;
   text-align: left;
   width: 90%;
@@ -16,12 +17,16 @@ html{
 #navbar {
   position:fixed;
   width:100%;
-  background-color: rgba(100, 20 ,75, .7);
+  background-color: rgba(100, 20, 35, .7);
   float: right;
 }
 
 .nav_title li {
   float: left;
+}
+
+h1 a {
+  color: papayawhip;
 }
 
 .nav_list li {
@@ -33,6 +38,9 @@ body {
   margin: 0;
 }
 
+#new_cut a {
+  background-color: coral;
+}
 #container {
   text-align: center;
   padding-top: 7em;
@@ -44,7 +52,7 @@ body {
   margin: 0 auto;
   width: 50%;
   border: 1px solid;
-  background-color: white;
+  background-color: rgba(232, 218, 204, .5);
   padding-bottom:20px;
 }
 
@@ -55,7 +63,7 @@ h1 {
 
 .button {
   font-size: 20px;
-  background-color: yellow;
+  background-color: indianred;
   padding: 5px;
   border: 1px solid;
 }
@@ -65,6 +73,7 @@ li {
 }
 
 a {
+  color:darkred;
   text-decoration: none;
 }
 
