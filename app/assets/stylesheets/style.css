@@ -82,6 +82,10 @@ li {
   list-style: none;
 }
 
+#content li {
+  display: block;
+}
+
 a {
   color:darkred;
   text-decoration: none;
