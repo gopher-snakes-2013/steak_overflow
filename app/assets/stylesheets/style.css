@@ -24,6 +24,12 @@ html{
 .nav_title li {
   float: left;
 }
+h2 {
+  display: inline;
+}
+.nav_list h2 {
+  color: papayawhip;
+}
 
 h1 a {
   color: papayawhip;
@@ -32,6 +38,8 @@ h1 a {
 .nav_list li {
   float: right;
   padding-right: 20px;
+  padding-top: 5px;
+  display: inline-block;
 }
 
 body {
@@ -69,6 +77,8 @@ h1 {
 }
 
 li {
+  display: inline;
+  margin-top: 5px;
   list-style: none;
 }
 
@@ -76,7 +86,11 @@ a {
   color:darkred;
   text-decoration: none;
 }
+.nav_list h2 a {
+  color: papayawhip;
+}
 
 .comment_link {
   float: right;
 }
+
