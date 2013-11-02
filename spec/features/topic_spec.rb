@@ -48,7 +48,7 @@ feature 'Comments' do
   end
 
   it "can create a comment on a topic" do
-    visit topic_path(topic.id)
+    visit topic_comments_path(topic.id)
     fill_in("comment[text]", :with => "that's a great idea")
     click_button("Comment")
     expect(page).to_not have_content(other_comment)
