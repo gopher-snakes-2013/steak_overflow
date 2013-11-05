@@ -31,7 +31,7 @@ GEM
     annotate (2.5.0)
       rake
     arel (3.0.2)
-    bcrypt-ruby (3.0.0)
+    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -139,12 +139,12 @@ DEPENDENCIES
   bcrypt-ruby
   better_errors
   capybara
-  coffee-rails (~> 3.2.1)
+  coffee-rails
   database_cleaner
   jquery-rails
   pg
   rails (= 3.2.13)
   rspec-rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   shoulda-matchers
-  uglifier (>= 1.0.3)
+  uglifier
